@@ -93,5 +93,88 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let ar=false;
 function toggleLang(){ar=!ar;document.documentElement.lang=ar?'ar':'en';document.documentElement.dir=ar?'rtl':'ltr';document.getElementById('lang').textContent=ar?'EN':'AR';document.querySelectorAll('[data-en]').forEach(e=>e.textContent=ar?e.dataset.ar:e.dataset.en)}
 </script>
+<div id="authModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fff;border-radius:18px;padding:28px;width:100%;max-width:420px;position:relative">
+    <button onclick="closeAuth()" style="position:absolute;right:15px;top:10px;border:0;background:none;font-size:26px;cursor:pointer">×</button>
+    <h2 id="authTitle" style="color:#102b50;margin-top:0">Login</h2>
+
+    <input id="authEmail" type="email" placeholder="Email"
+      style="width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border-radius:10px;box-sizing:border-box">
+
+    <input id="authPassword" type="password" placeholder="Password"
+      style="width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border-radius:10px;box-sizing:border-box">
+
+    <button onclick="loginUser()" style="width:100%;padding:13px;margin-top:10px;background:#102b50;color:#fff;border:0;border-radius:10px;font-weight:700">
+      Login
+    </button>
+
+    <button onclick="signupUser()" style="width:100%;padding:13px;margin-top:10px;background:#08a66a;color:#fff;border:0;border-radius:10px;font-weight:700">
+      Create Account
+    </button>
+
+    <button onclick="resetPassword()" style="width:100%;padding:10px;margin-top:8px;background:none;border:0;color:#102b50;cursor:pointer">
+      Forgot Password?
+    </button>
+
+    <p id="authMessage" style="text-align:center;margin-bottom:0"></p>
+  </div>
+</div>
+
+<script>
+const authModal = document.getElementById("authModal");
+const authMessage = document.getElementById("authMessage");
+
+document.querySelector(".login").addEventListener("click", function(e){
+  e.preventDefault();
+  authModal.style.display = "flex";
+});
+
+function closeAuth(){
+  authModal.style.display = "none";
+  authMessage.textContent = "";
+}
+
+async function loginUser(){
+  const email = document.getElementById("authEmail").value.trim();
+  const password = document.getElementById("authPassword").value;
+
+  const {error} = await supabaseClient.auth.signInWithPassword({email,password});
+
+  if(error){
+    authMessage.textContent = error.message;
+  }else{
+    authMessage.textContent = "Login successful!";
+    setTimeout(closeAuth,1000);
+  }
+}
+
+async function signupUser(){
+  const email = document.getElementById("authEmail").value.trim();
+  const password = document.getElementById("authPassword").value;
+
+  const {error} = await supabaseClient.auth.signUp({email,password});
+
+  if(error){
+    authMessage.textContent = error.message;
+  }else{
+    authMessage.textContent = "Account created. Check your email to confirm.";
+  }
+}
+
+async function resetPassword(){
+  const email = document.getElementById("authEmail").value.trim();
+
+  if(!email){
+    authMessage.textContent = "Enter your email first.";
+    return;
+  }
+
+  const {error} = await supabaseClient.auth.resetPasswordForEmail(email,{
+    redirectTo: window.location.origin
+  });
+
+  authMessage.textContent = error ? error.message : "Password reset email sent.";
+}
+</script>
 </body>
 </html>
