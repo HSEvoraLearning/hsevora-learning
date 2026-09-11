@@ -34,7 +34,12 @@ footer{background:#fff;border-top:1px solid var(--line);padding:32px 6%;display:
 @media(max-width:980px){.navlinks{display:none}.mobile-menu{display:block;border:0;background:#fff;color:var(--navy);font-size:25px}.hero{grid-template-columns:1fr}.hero-copy{padding:55px 7% 35px;background:#fff}.hero-visual{min-height:480px}.cards{grid-template-columns:1fr 1fr}.features{max-width:none}}
 @media(max-width:600px){.nav{height:70px;padding:0 5%}.logo{font-size:19px}.logo-mark{width:36px;height:36px}.login{padding:10px 14px}.hero-copy{padding:42px 6% 30px}h1{font-size:44px;letter-spacing:-1.5px}.lead{font-size:16px}.features{grid-template-columns:1fr 1fr;gap:18px}.hero-visual{min-height:420px;background-position:60% center}.quote{left:6%;right:6%;top:7%;max-width:none;font-size:14px}.section{padding:60px 6%}h2{font-size:32px}.cards{grid-template-columns:1fr}.course{grid-template-columns:1fr;padding:28px}.price small{text-align:left}footer{flex-direction:column}}
 </style>
-</head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://opiwrohsiotydsnykyqr.supabase.co";
+const SUPABASE_KEY = "sb_publishable_EhYF6h25aD96SV5YlcjEmA_jHq5VC5i";
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+</script></head>
 <body>
 <header class="nav">
 <a class="logo" href="#"><span class="logo-mark">H</span><span>HSEvora <small>Learning</small></span></a>
