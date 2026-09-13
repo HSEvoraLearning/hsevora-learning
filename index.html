@@ -1,31 +1,25 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-
 <head>
-
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>True HSE Learning</title>
 
-<meta
-name="description"
-content="Practical NEBOSH preparation by True HSE Learning."
->
+<meta name="description"
+content="Practical NEBOSH exam preparation designed around assessment success.">
 
 <style>
-
 :root{
   --navy:#102b50;
   --blue:#147bd1;
   --green:#08a66a;
   --ink:#12233b;
-  --muted:#5f7188;
+  --muted:#61738a;
   --line:#dfe8f2;
   --bg:#f7fbff;
   --white:#ffffff;
-  --danger:#d93025;
+  --danger:#c62828;
 }
 
 *{
@@ -58,7 +52,6 @@ button{
   cursor:pointer;
 }
 
-
 /* =========================
    NAVIGATION
 ========================= */
@@ -69,46 +62,43 @@ button{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:10px 4.5%;
+  padding:0 5.5%;
   border-bottom:1px solid var(--line);
   position:sticky;
   top:0;
-  z-index:1000;
+  z-index:100;
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:14px;
-  min-width:250px;
+  gap:12px;
+  color:var(--navy);
+  font-size:22px;
+  font-weight:850;
+  white-space:nowrap;
 }
 
 .logo img{
-  width:235px;
-  max-width:100%;
-  height:auto;
+  width:48px;
+  height:48px;
+  object-fit:contain;
   display:block;
 }
 
-.logo-text{
-  border-left:1px solid #aebdca;
-  padding-left:18px;
-  color:var(--navy);
-  font-size:14px;
-  line-height:1.5;
-  font-weight:650;
-}
-
-.logo-text strong{
+.logo-text small{
   display:block;
-  font-size:14px;
+  color:var(--blue);
+  font-size:12px;
+  letter-spacing:2px;
+  margin-top:-3px;
 }
 
 .navlinks{
   display:flex;
   align-items:center;
-  gap:28px;
-  color:var(--navy);
+  gap:25px;
+  color:#3f5269;
   font-size:15px;
   font-weight:650;
 }
@@ -123,27 +113,24 @@ button{
   gap:14px;
 }
 
-.icon-button{
-  border:0;
-  background:transparent;
-  color:var(--navy);
-  font-size:21px;
-}
-
 .lang{
   border:0;
   background:transparent;
   color:var(--navy);
-  font-weight:700;
+  font-weight:750;
 }
 
 .login{
   background:var(--navy);
   color:#fff;
-  padding:13px 28px;
-  border-radius:9px;
+  padding:12px 23px;
+  border-radius:10px;
   border:0;
   font-weight:750;
+}
+
+.login:hover{
+  opacity:.92;
 }
 
 .mobile-menu{
@@ -154,83 +141,40 @@ button{
   font-size:25px;
 }
 
-
 /* =========================
    HERO
 ========================= */
 
 .hero{
-  min-height:720px;
-  position:relative;
-  overflow:hidden;
+  width:100%;
   background:#fff;
+  overflow:hidden;
 }
 
 .hero-image{
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.98) 0%,
-      rgba(255,255,255,.94) 25%,
-      rgba(255,255,255,.45) 45%,
-      rgba(255,255,255,.05) 70%
-    ),
-    url("hero.jpg");
-  background-size:cover;
-  background-position:center;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
   width:100%;
-  max-width:1500px;
-  margin:auto;
-  min-height:720px;
+  height:auto;
+  display:block;
+}
+
+/*
+  The hero image already contains:
+  - True HSE Learning logo
+  - navigation design
+  - headline
+  - buttons
+  - classroom scene
+  Therefore we do NOT place duplicate text over it.
+*/
+
+.hero-actions{
+  max-width:1200px;
+  margin:0 auto;
+  padding:28px 6%;
   display:flex;
-  align-items:center;
-  padding:80px 5%;
-}
-
-.hero-copy{
-  width:53%;
-  max-width:690px;
-}
-
-.kicker{
-  font-size:13px;
-  letter-spacing:3px;
-  color:var(--blue);
-  font-weight:850;
-  margin-bottom:18px;
-}
-
-h1{
-  font-size:clamp(48px,5.2vw,78px);
-  line-height:1.01;
-  letter-spacing:-2.5px;
-  margin:0 0 24px;
-  color:var(--navy);
-}
-
-h1 span{
-  color:var(--green);
-}
-
-.lead{
-  font-size:18px;
-  color:#233d5b;
-  max-width:650px;
-  margin:0 0 30px;
-}
-
-.actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:38px;
+  justify-content:center;
+  gap:14px;
+  background:#fff;
 }
 
 .btn{
@@ -238,7 +182,7 @@ h1 span{
   align-items:center;
   justify-content:center;
   padding:14px 25px;
-  border-radius:9px;
+  border-radius:11px;
   font-weight:800;
   border:1px solid var(--navy);
 }
@@ -254,46 +198,16 @@ h1 span{
   color:var(--navy);
 }
 
-.primary:hover{
-  filter:brightness(.95);
+.btn:hover{
+  transform:translateY(-1px);
 }
-
-.secondary:hover{
-  background:#f3f8fc;
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  max-width:620px;
-}
-
-.feature{
-  color:var(--navy);
-  font-size:12px;
-  font-weight:700;
-}
-
-.icon{
-  width:47px;
-  height:47px;
-  border:2px solid #38a4e9;
-  border-radius:9px;
-  display:grid;
-  place-items:center;
-  margin-bottom:8px;
-  color:var(--blue);
-  font-size:22px;
-}
-
 
 /* =========================
    SECTIONS
 ========================= */
 
 .section{
-  padding:85px 6%;
+  padding:80px 6%;
   max-width:1280px;
   margin:auto;
 }
@@ -323,8 +237,12 @@ h2 span{
 .sub{
   color:var(--muted);
   max-width:760px;
-  margin:0 auto 38px;
+  margin:0 auto 35px;
 }
+
+/* =========================
+   CARDS
+========================= */
 
 .cards{
   display:grid;
@@ -336,8 +254,8 @@ h2 span{
   background:#fff;
   border:1px solid var(--line);
   border-radius:18px;
-  padding:27px;
-  box-shadow:0 12px 30px rgba(23,57,93,.05);
+  padding:25px;
+  box-shadow:0 12px 30px #17395d0b;
 }
 
 .card .bigicon{
@@ -356,7 +274,6 @@ h2 span{
   font-size:14px;
 }
 
-
 /* =========================
    COURSE
 ========================= */
@@ -365,7 +282,7 @@ h2 span{
   background:var(--navy);
   color:#fff;
   border-radius:26px;
-  padding:42px;
+  padding:38px;
   display:grid;
   grid-template-columns:1fr auto;
   gap:30px;
@@ -379,11 +296,10 @@ h2 span{
 
 .course p{
   color:#d8e4f0;
-  max-width:700px;
 }
 
 .price{
-  font-size:42px;
+  font-size:38px;
   font-weight:900;
   white-space:nowrap;
 }
@@ -396,7 +312,6 @@ h2 span{
   font-weight:600;
 }
 
-
 /* =========================
    NOTICE
 ========================= */
@@ -404,7 +319,7 @@ h2 span{
 .notice{
   max-width:1150px;
   margin:0 auto 70px;
-  padding:19px 23px;
+  padding:18px 22px;
   background:#fff;
   border:1px solid #dbe7f2;
   border-radius:14px;
@@ -412,119 +327,90 @@ h2 span{
   font-size:13px;
 }
 
-
 /* =========================
-   ADMIN DASHBOARD
+   FOOTER
 ========================= */
 
-.admin-panel{
-  display:none;
-  background:#eef5fb;
-  padding:70px 6%;
-}
-
-.admin-container{
-  max-width:1200px;
-  margin:auto;
-}
-
-.admin-header{
+footer{
+  background:#fff;
+  border-top:1px solid var(--line);
+  padding:32px 6%;
   display:flex;
   justify-content:space-between;
-  align-items:center;
   gap:20px;
-  flex-wrap:wrap;
+  color:#61738a;
+  font-size:13px;
 }
 
-.admin-header h2{
-  margin:0;
+/* =========================
+   RTL
+========================= */
+
+[dir="rtl"]{
+  text-align:right;
 }
 
-.admin-header p{
-  color:var(--muted);
+[dir="rtl"] .nav,
+[dir="rtl"] .navright{
+  direction:rtl;
 }
 
-.admin-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-top:30px;
+[dir="rtl"] .hero-actions{
+  direction:rtl;
 }
-
-.admin-card{
-  background:#fff;
-  border-radius:16px;
-  padding:25px;
-  border:1px solid var(--line);
-}
-
-.admin-card span{
-  color:var(--muted);
-  font-size:14px;
-}
-
-.admin-card strong{
-  display:block;
-  margin-top:7px;
-  font-size:28px;
-  color:var(--green);
-}
-
-.logout-btn{
-  background:var(--danger);
-  color:#fff;
-  border:0;
-  padding:11px 20px;
-  border-radius:9px;
-  font-weight:700;
-}
-
 
 /* =========================
    AUTH MODAL
 ========================= */
 
-.modal{
+#authModal{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.68);
+  background:rgba(0,0,0,.65);
   z-index:9999;
   align-items:center;
   justify-content:center;
   padding:20px;
 }
 
-.modal-box{
+.auth-box{
   background:#fff;
   border-radius:20px;
   padding:30px;
   width:100%;
-  max-width:440px;
+  max-width:430px;
   position:relative;
-  box-shadow:0 25px 80px rgba(0,0,0,.25);
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
 }
 
-.close{
+.auth-close{
   position:absolute;
   right:15px;
-  top:8px;
+  top:10px;
   border:0;
   background:none;
-  font-size:30px;
+  font-size:28px;
   color:#555;
 }
 
-.modal-title{
+.auth-title{
   color:var(--navy);
   margin:0 0 20px;
+  font-size:30px;
+}
+
+.auth-subtitle{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
 }
 
 .auth-input{
   width:100%;
-  padding:13px 14px;
+  padding:13px;
   margin:7px 0;
-  border:1px solid #d5dee8;
+  border:1px solid #d7e0e9;
   border-radius:10px;
   outline:none;
 }
@@ -533,13 +419,13 @@ h2 span{
   border-color:var(--blue);
 }
 
-.auth-btn{
+.auth-button{
   width:100%;
   padding:13px;
   margin-top:10px;
   border:0;
   border-radius:10px;
-  font-weight:800;
+  font-weight:750;
 }
 
 .auth-login{
@@ -552,109 +438,79 @@ h2 span{
   color:#fff;
 }
 
-.auth-admin{
-  background:#243b5b;
-  color:#fff;
-}
-
-.auth-link{
+.auth-reset{
   background:none;
   color:var(--navy);
 }
 
-.auth-message{
+.auth-switch{
   text-align:center;
-  min-height:25px;
   margin:15px 0 0;
-  font-size:14px;
-  font-weight:650;
-}
-
-.divider{
-  margin:19px 0;
-  border-top:1px solid var(--line);
-}
-
-.form-note{
+  font-size:13px;
   color:var(--muted);
-  font-size:12px;
-  margin-top:10px;
-  text-align:center;
 }
 
+.auth-switch button{
+  border:0;
+  background:none;
+  color:var(--blue);
+  font-weight:750;
+}
+
+#authMessage{
+  text-align:center;
+  margin:14px 0 0;
+  font-size:13px;
+  min-height:20px;
+}
+
+.success{
+  color:var(--green);
+}
+
+.error{
+  color:var(--danger);
+}
 
 /* =========================
-   FOOTER
+   LOGGED IN AREA
 ========================= */
 
-footer{
+#loggedInArea{
+  display:none;
   background:#fff;
   border-top:1px solid var(--line);
-  padding:34px 6%;
+  padding:18px 6%;
+}
+
+.logged-inner{
+  max-width:1200px;
+  margin:auto;
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  gap:20px;
-  color:#61738a;
-  font-size:13px;
+  gap:15px;
 }
 
+.logged-name{
+  color:var(--navy);
+  font-weight:750;
+}
+
+.logout{
+  background:#fff;
+  color:var(--danger);
+  border:1px solid #e3b7b7;
+  padding:9px 16px;
+  border-radius:9px;
+  font-weight:700;
+}
 
 /* =========================
-   RTL
+   MOBILE
 ========================= */
 
-[dir="rtl"]{
-  text-align:right;
-}
-
-[dir="rtl"] .navlinks,
-[dir="rtl"] .navright{
-  direction:rtl;
-}
-
-[dir="rtl"] .hero-copy{
-  direction:rtl;
-}
-
-[dir="rtl"] .logo-text{
-  border-left:0;
-  border-right:1px solid #aebdca;
-  padding-left:0;
-  padding-right:18px;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1100px){
-
-  .navlinks{
-    gap:15px;
-    font-size:14px;
-  }
-
-  .logo-text{
-    display:none;
-  }
-
-  .hero-copy{
-    width:60%;
-  }
-
-  .cards{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .admin-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-}
-
-
-@media(max-width:850px){
+@media(max-width:980px){
 
   .navlinks{
     display:none;
@@ -664,68 +520,51 @@ footer{
     display:block;
   }
 
-  .hero{
-    min-height:700px;
+  .cards{
+    grid-template-columns:1fr 1fr;
   }
 
-  .hero-image{
-    background-image:
-      linear-gradient(
-        90deg,
-        rgba(255,255,255,.97),
-        rgba(255,255,255,.75)
-      ),
-      url("hero.jpg");
+  .course{
+    grid-template-columns:1fr;
   }
 
-  .hero-content{
-    min-height:700px;
+  .price small{
+    text-align:left;
   }
-
-  .hero-copy{
-    width:100%;
-    max-width:650px;
-  }
-
 }
-
 
 @media(max-width:600px){
 
   .nav{
     min-height:70px;
-    padding:8px 5%;
+    padding:0 5%;
+  }
+
+  .logo{
+    font-size:17px;
   }
 
   .logo img{
-    width:190px;
+    width:40px;
+    height:40px;
   }
 
   .login{
-    padding:10px 14px;
+    padding:10px 15px;
   }
 
-  .hero{
-    min-height:700px;
+  .hero-image{
+    width:100%;
+    height:auto;
   }
 
-  .hero-content{
-    min-height:700px;
-    padding:45px 6%;
+  .hero-actions{
+    padding:20px 6%;
+    flex-direction:column;
   }
 
-  h1{
-    font-size:45px;
-    letter-spacing:-1.5px;
-  }
-
-  .lead{
-    font-size:16px;
-  }
-
-  .features{
-    grid-template-columns:1fr 1fr;
-    gap:18px;
+  .hero-actions .btn{
+    width:100%;
   }
 
   .section{
@@ -741,40 +580,23 @@ footer{
   }
 
   .course{
-    grid-template-columns:1fr;
     padding:28px;
-  }
-
-  .price{
-    font-size:36px;
-  }
-
-  .price small{
-    text-align:left;
-  }
-
-  .admin-grid{
-    grid-template-columns:1fr;
   }
 
   footer{
     flex-direction:column;
   }
 
-  .modal-box{
-    padding:25px 20px;
+  .auth-box{
+    padding:24px;
   }
-
 }
-
 </style>
 
 <!-- SUPABASE -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-
 const SUPABASE_URL =
 "https://opiwrohsiotydsnykyqr.supabase.co";
 
@@ -782,18 +604,12 @@ const SUPABASE_KEY =
 "sb_publishable_EhYF6h25aD96SV5YlcjEmA_jHq5VC5i";
 
 const supabaseClient =
-supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
+supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 </script>
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      NAVIGATION
@@ -801,401 +617,229 @@ supabase.createClient(
 
 <header class="nav">
 
-<a class="logo" href="#home">
+  <a class="logo" href="#home">
 
-<img
-src="logo.png"
-alt="True HSE Learning"
->
+    <img src="logo.png" alt="True HSE Learning">
 
-<div class="logo-text">
+    <span class="logo-text">
+      True HSE
+      <small>Learning</small>
+    </span>
 
-<strong>Practical Knowledge</strong>
-Safer Workplaces<br>
-Pass NEBOSH
+  </a>
 
-</div>
+  <nav class="navlinks">
 
-</a>
+    <a href="#home"
+       data-en="Home"
+       data-ar="الرئيسية">
+       Home
+    </a>
 
+    <a href="#course"
+       data-en="Courses"
+       data-ar="الدورات">
+       Courses
+    </a>
 
-<nav class="navlinks">
+    <a href="#about"
+       data-en="About"
+       data-ar="من نحن">
+       About
+    </a>
 
-<a
-href="#home"
-data-en="Home"
-data-ar="الرئيسية"
->
-Home
-</a>
+    <a href="#resources"
+       data-en="Resources"
+       data-ar="المصادر">
+       Resources
+    </a>
 
-<a
-href="#course"
-data-en="Courses"
-data-ar="الدورات"
->
-Courses
-</a>
+    <a href="#contact"
+       data-en="Contact"
+       data-ar="تواصل معنا">
+       Contact
+    </a>
 
-<a
-href="#about"
-data-en="About"
-data-ar="من نحن"
->
-About
-</a>
+  </nav>
 
-<a
-href="#resources"
-data-en="Resources"
-data-ar="المصادر"
->
-Resources
-</a>
+  <div class="navright">
 
-<a
-href="#contact"
-data-en="Contact"
-data-ar="تواصل معنا"
->
-Contact
-</a>
+    <button
+      class="lang"
+      onclick="toggleLang()"
+      id="lang">
+      AR
+    </button>
 
-</nav>
+    <button
+      class="login"
+      onclick="openAuth('login')">
+      Login
+    </button>
 
+    <button
+      class="mobile-menu"
+      aria-label="Menu">
+      ☰
+    </button>
 
-<div class="navright">
-
-<button
-class="icon-button"
-aria-label="Search"
->
-⌕
-</button>
-
-<button
-class="icon-button"
-aria-label="Language"
->
-◎
-</button>
-
-<button
-class="lang"
-onclick="toggleLang()"
-id="lang"
->
-AR
-</button>
-
-<button
-class="login"
-onclick="openStudentAuth()"
->
-Login
-</button>
-
-<button
-class="mobile-menu"
-aria-label="Menu"
->
-☰
-</button>
-
-</div>
+  </div>
 
 </header>
-
-
-
-<main id="home">
 
 
 <!-- =========================
      HERO
 ========================= -->
 
+<main id="home">
+
 <section class="hero">
 
-<div class="hero-image"></div>
-
-
-<div class="hero-content">
-
-<div class="hero-copy">
-
-<div
-class="kicker"
-data-en="LEARN • PRACTICE • SUCCEED"
-data-ar="تعلّم • تدرب • انجح"
->
-LEARN • PRACTICE • SUCCEED
-</div>
-
-
-<h1>
-
-Master. Apply.<br>
-
-<span>
-Pass NEBOSH!
-</span>
-
-</h1>
-
-
-<p
-class="lead"
-data-en="Practical NEBOSH exam preparation designed around assessment success. Learn how to approach scenarios, structure strong answers, use your study materials effectively, and apply your knowledge in the assessment and at work."
-data-ar="تحضير عملي لاختبار NEBOSH يركز على النجاح في التقييم. تعلم كيفية التعامل مع السيناريوهات، وصياغة إجابات قوية، والاستفادة من موادك الدراسية، وتطبيق معرفتك في التقييم وفي العمل."
->
-
-Practical NEBOSH exam preparation designed around assessment success. Learn how to approach scenarios, structure strong answers, use your study materials effectively, and apply your knowledge in the assessment and at work.
-
-</p>
-
-
-<div class="actions">
-
-<a
-class="btn primary"
-href="#course"
-data-en="Explore Course →"
-data-ar="استكشف الدورة ←"
->
-Explore Course →
-</a>
-
-
-<a
-class="btn secondary"
-href="#about"
-data-en="Learn More"
-data-ar="اعرف المزيد"
->
-Learn More
-</a>
-
-</div>
-
-
-<div class="features">
-
-
-<div class="feature">
-
-<div class="icon">
-▣
-</div>
-
-<span
-data-en="Structured Learning"
-data-ar="تعلم منظم"
->
-Structured Learning
-</span>
-
-</div>
-
-
-<div class="feature">
-
-<div class="icon">
-◎
-</div>
-
-<span
-data-en="Exam-Focused Approach"
-data-ar="تركيز على الاختبار"
->
-Exam-Focused Approach
-</span>
-
-</div>
-
-
-<div class="feature">
-
-<div class="icon">
-↗
-</div>
-
-<span
-data-en="Practical Application"
-data-ar="تطبيق عملي"
->
-Practical Application
-</span>
-
-</div>
-
-
-<div class="feature">
-
-<div class="icon">
-◇
-</div>
-
-<span
-data-en="Build Your Confidence"
-data-ar="ابنِ ثقتك"
->
-Build Your Confidence
-</span>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
+  <img
+    class="hero-image"
+    src="hero.jpg"
+    alt="True HSE Learning NEBOSH preparation">
 
 </section>
 
+
+<!-- Functional buttons below hero -->
+
+<div class="hero-actions">
+
+  <a
+    class="btn primary"
+    href="#course"
+    data-en="Explore Course →"
+    data-ar="استكشف الدورة ←">
+    Explore Course →
+  </a>
+
+  <a
+    class="btn secondary"
+    href="#about"
+    data-en="Learn More"
+    data-ar="اعرف المزيد">
+    Learn More
+  </a>
+
+</div>
 
 
 <!-- =========================
-     ABOUT / WHY
+     ABOUT
 ========================= -->
 
 <section
-class="section center"
-id="about"
->
+  class="section center"
+  id="about">
 
-<div
-class="eyebrow"
-data-en="WHY CHOOSE TRUE HSE"
-data-ar="لماذا True HSE؟"
->
-WHY CHOOSE TRUE HSE
-</div>
+  <div
+    class="eyebrow"
+    data-en="WHY CHOOSE TRUE HSE"
+    data-ar="لماذا True HSE؟">
+    WHY CHOOSE TRUE HSE
+  </div>
 
+  <h2
+    data-en="More Than Just Exam Prep"
+    data-ar="أكثر من مجرد تحضير للاختبار">
+    More Than Just
+    <span>Exam Prep</span>
+  </h2>
 
-<h2
-data-en="More Than Just Exam Prep"
-data-ar="أكثر من مجرد تحضير للاختبار"
->
-More Than Just
-<span>Exam Prep</span>
-</h2>
-
-
-<p
-class="sub"
-data-en="We help you build the knowledge, confidence, and practical skills to succeed in your NEBOSH exam and apply what you learn in safer workplaces."
-data-ar="نساعدك على بناء المعرفة والثقة والمهارات العملية للنجاح في اختبار NEBOSH وتطبيق ما تتعلمه في بيئات عمل أكثر أمانًا."
->
-
-We help you build the knowledge, confidence, and practical skills to succeed in your NEBOSH exam and apply what you learn in safer workplaces.
-
-</p>
+  <p
+    class="sub"
+    data-en="We help you build the knowledge, confidence, and practical skills to succeed in your NEBOSH exam and apply what you learn in safer workplaces."
+    data-ar="نساعدك على بناء المعرفة والثقة والمهارات العملية للنجاح في اختبار NEBOSH وتطبيق ما تتعلمه في بيئات عمل أكثر أمانًا.">
+    We help you build the knowledge, confidence, and practical skills
+    to succeed in your NEBOSH exam and apply what you learn in safer workplaces.
+  </p>
 
 
-<div class="cards">
+  <div class="cards">
+
+    <article class="card">
+
+      <div class="bigicon">🎓</div>
+
+      <h3
+        data-en="Expert-Led Content"
+        data-ar="محتوى احترافي">
+        Expert-Led Content
+      </h3>
+
+      <p
+        data-en="Clear explanations and practical study methods."
+        data-ar="شرح واضح وأساليب دراسة عملية.">
+        Clear explanations and practical study methods.
+      </p>
+
+    </article>
 
 
-<article class="card">
+    <article class="card">
 
-<div class="bigicon">
-🎓
-</div>
+      <div class="bigicon">▤</div>
 
-<h3
-data-en="Expert-Led Content"
-data-ar="محتوى احترافي"
->
-Expert-Led Content
-</h3>
+      <h3
+        data-en="Scenario-Based Learning"
+        data-ar="تعلم قائم على السيناريوهات">
+        Scenario-Based Learning
+      </h3>
 
-<p
-data-en="Clear explanations and practical study methods."
-data-ar="شرح واضح وأساليب دراسة عملية."
->
-Clear explanations and practical study methods.
-</p>
+      <p
+        data-en="Practise with realistic workplace scenarios."
+        data-ar="تدرب على سيناريوهات واقعية من بيئة العمل.">
+        Practise with realistic workplace scenarios.
+      </p>
 
-</article>
+    </article>
 
 
-<article class="card">
+    <article
+      class="card"
+      id="resources">
 
-<div class="bigicon">
-▤
-</div>
+      <div class="bigicon">⚙</div>
 
-<h3
-data-en="Scenario-Based Learning"
-data-ar="تعلم قائم على السيناريوهات"
->
-Scenario-Based Learning
-</h3>
+      <h3
+        data-en="Practical Tools & Templates"
+        data-ar="أدوات وقوالب عملية">
+        Practical Tools & Templates
+      </h3>
 
-<p
-data-en="Practise with realistic workplace scenarios."
-data-ar="تدرب على سيناريوهات واقعية من بيئة العمل."
->
-Practise with realistic workplace scenarios.
-</p>
+      <p
+        data-en="Useful resources to help you apply your knowledge."
+        data-ar="مصادر مفيدة تساعدك على تطبيق معرفتك.">
+        Useful resources to help you apply your knowledge.
+      </p>
 
-</article>
+    </article>
 
 
-<article
-class="card"
-id="resources"
->
+    <article class="card">
 
-<div class="bigicon">
-⚙
-</div>
+      <div class="bigicon">♧</div>
 
-<h3
-data-en="Practical Tools & Templates"
-data-ar="أدوات وقوالب عملية"
->
-Practical Tools & Templates
-</h3>
+      <h3
+        data-en="A Safer Tomorrow"
+        data-ar="غد أكثر أمانًا">
+        A Safer Tomorrow
+      </h3>
 
-<p
-data-en="Useful resources to help you apply your knowledge."
-data-ar="مصادر مفيدة تساعدك على تطبيق معرفتك."
->
-Useful resources to help you apply your knowledge.
-</p>
+      <p
+        data-en="Build knowledge that supports safer people and workplaces."
+        data-ar="ابنِ معرفة تدعم سلامة الأشخاص وبيئات العمل.">
+        Build knowledge that supports safer people and workplaces.
+      </p>
 
-</article>
+    </article>
 
-
-<article class="card">
-
-<div class="bigicon">
-♧
-</div>
-
-<h3
-data-en="A Safer Tomorrow"
-data-ar="غد أكثر أمانًا"
->
-A Safer Tomorrow
-</h3>
-
-<p
-data-en="Build knowledge that supports safer people and workplaces."
-data-ar="ابنِ معرفة تدعم سلامة الأشخاص وبيئات العمل."
->
-Build knowledge that supports safer people and workplaces.
-</p>
-
-</article>
-
-
-</div>
+  </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1203,71 +847,60 @@ Build knowledge that supports safer people and workplaces.
 ========================= -->
 
 <section
-class="section"
-id="course"
->
+  class="section"
+  id="course">
 
-<div class="course">
+  <div class="course">
 
-<div>
+    <div>
 
-<div
-class="eyebrow"
-style="color:#8bcfff"
-data-en="NEBOSH IGC PREPARATION"
-data-ar="التحضير لـ NEBOSH IGC"
->
-NEBOSH IGC PREPARATION
-</div>
+      <div
+        class="eyebrow"
+        style="color:#8bcfff"
+        data-en="NEBOSH IGC PREPARATION"
+        data-ar="التحضير لـ NEBOSH IGC">
+        NEBOSH IGC PREPARATION
+      </div>
 
+      <h2
+        data-en="Prepare with purpose. Apply with confidence."
+        data-ar="استعد بهدف. وطبّق بثقة.">
+        Prepare with purpose.
+        Apply with confidence.
+      </h2>
 
-<h2
-data-en="Prepare with purpose. Apply with confidence."
-data-ar="استعد بهدف. وطبّق بثقة."
->
-Prepare with purpose. Apply with confidence.
-</h2>
+      <p
+        data-en="One course. Structured lessons, practical examples, assessment practice and a clear path toward exam readiness."
+        data-ar="دورة واحدة تشمل دروسًا منظمة، أمثلة عملية، تدريبًا على التقييم ومسارًا واضحًا للاستعداد للاختبار.">
+        One course. Structured lessons, practical examples,
+        assessment practice and a clear path toward exam readiness.
+      </p>
 
+      <button
+        class="btn primary"
+        onclick="openAuth('signup')"
+        data-en="Start Learning"
+        data-ar="ابدأ التعلم">
+        Start Learning
+      </button>
 
-<p
-data-en="One course. Structured lessons, practical examples, assessment practice and a clear path toward exam readiness."
-data-ar="دورة واحدة تشمل دروسًا منظمة، أمثلة عملية، تدريبًا على التقييم ومسارًا واضحًا للاستعداد للاختبار."
->
+    </div>
 
-One course. Structured lessons, practical examples, assessment practice and a clear path toward exam readiness.
+    <div class="price">
 
-</p>
+      AED 500
 
+      <small
+        data-en="one-time course price"
+        data-ar="سعر الدورة لمرة واحدة">
+        one-time course price
+      </small>
 
-<button
-class="btn primary"
-onclick="openStudentAuth()"
-data-en="Start Learning"
-data-ar="ابدأ التعلم"
->
-Start Learning
-</button>
+    </div>
 
-</div>
-
-
-<div class="price">
-
-AED 500
-
-<small
-data-en="one-time course price"
-data-ar="سعر الدورة لمرة واحدة"
->
-one-time course price
-</small>
-
-</div>
-
-</div>
+  </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1275,132 +908,51 @@ one-time course price
 ========================= -->
 
 <div
-class="notice"
-id="contact"
->
+  class="notice"
+  id="contact">
 
-<strong
-data-en="Important:"
-data-ar="مهم:"
->
-Important:
-</strong>
+  <strong
+    data-en="Important:"
+    data-ar="مهم:">
+    Important:
+  </strong>
 
-
-<span
-data-en="True HSE Learning provides training and preparation only. It does not issue the official NEBOSH qualification or certificate and is not presented as NEBOSH itself."
-data-ar="منصة True HSE Learning تقدم التدريب والتحضير فقط. لا تصدر مؤهل أو شهادة NEBOSH الرسمية ولا تمثل نفسها على أنها NEBOSH."
->
-
-True HSE Learning provides training and preparation only. It does not issue the official NEBOSH qualification or certificate and is not presented as NEBOSH itself.
-
-</span>
+  <span
+    data-en="True HSE Learning provides training and preparation only. It does not issue the official NEBOSH qualification or certificate and is not presented as NEBOSH itself."
+    data-ar="منصة True HSE Learning تقدم التدريب والتحضير فقط. لا تصدر مؤهل أو شهادة NEBOSH الرسمية ولا تمثل نفسها على أنها NEBOSH.">
+    True HSE Learning provides training and preparation only.
+    It does not issue the official NEBOSH qualification or certificate
+    and is not presented as NEBOSH itself.
+  </span>
 
 </div>
-
 
 </main>
 
 
-
 <!-- =========================
-     ADMIN DASHBOARD
+     LOGGED IN AREA
 ========================= -->
 
-<section
-class="admin-panel"
-id="adminPanel"
->
+<div id="loggedInArea">
 
-<div class="admin-container">
+  <div class="logged-inner">
 
+    <div
+      class="logged-name"
+      id="loggedUser">
+      Logged in
+    </div>
 
-<div class="admin-header">
+    <button
+      class="logout"
+      onclick="logoutUser()">
+      Logout
+    </button>
 
-<div>
-
-<h2>
-Admin Dashboard
-</h2>
-
-<p id="adminEmail">
-</p>
-
-</div>
-
-
-<button
-class="logout-btn"
-onclick="logoutUser()"
->
-Logout
-</button>
+  </div>
 
 </div>
-
-
-<div class="admin-grid">
-
-
-<div class="admin-card">
-
-<span>
-Students
-</span>
-
-<strong id="studentCount">
-0
-</strong>
-
-</div>
-
-
-<div class="admin-card">
-
-<span>
-Courses
-</span>
-
-<strong>
-1
-</strong>
-
-</div>
-
-
-<div class="admin-card">
-
-<span>
-Course Price
-</span>
-
-<strong>
-AED 500
-</strong>
-
-</div>
-
-
-<div class="admin-card">
-
-<span>
-Platform
-</span>
-
-<strong>
-Active
-</strong>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-</section>
-
 
 
 <!-- =========================
@@ -1409,451 +961,460 @@ Active
 
 <footer>
 
-<div>
+  <div>
 
-<strong>
-True HSE Learning
-</strong>
+    <strong>True HSE Learning</strong>
 
-<br>
+    <br>
 
-Practical Knowledge • Safer Workplaces • Brighter Futures
+    Practical Knowledge • Safer Workplaces • Brighter Futures
 
-</div>
+  </div>
 
-
-<div>
-© 2026 True HSE Learning
-</div>
+  <div>
+    © 2026 True HSE Learning
+  </div>
 
 </footer>
-
 
 
 <!-- =========================
      AUTH MODAL
 ========================= -->
 
-<div
-class="modal"
-id="authModal"
->
+<div id="authModal">
 
-<div class="modal-box">
+  <div class="auth-box">
 
-
-<button
-class="close"
-onclick="closeAuth()"
->
-×
-</button>
+    <button
+      class="auth-close"
+      onclick="closeAuth()">
+      ×
+    </button>
 
 
-<h2
-class="modal-title"
-id="authTitle"
->
-Student Login
-</h2>
+    <h2
+      class="auth-title"
+      id="authTitle">
+      Login
+    </h2>
 
 
-
-<!-- STUDENT LOGIN -->
-
-<div id="loginForm">
-
-
-<input
-class="auth-input"
-id="loginEmail"
-type="email"
-placeholder="Email"
-autocomplete="email"
->
+    <div
+      class="auth-subtitle"
+      id="authSubtitle">
+      Login to your True HSE Learning account.
+    </div>
 
 
-<input
-class="auth-input"
-id="loginPassword"
-type="password"
-placeholder="Password"
-autocomplete="current-password"
->
+    <!-- NAME - SIGNUP ONLY -->
+
+    <input
+      id="authName"
+      class="auth-input"
+      type="text"
+      placeholder="Full Name"
+      style="display:none;">
 
 
-<button
-class="auth-btn auth-login"
-onclick="loginStudent()"
->
-Login
-</button>
+    <!-- EMAIL -->
+
+    <input
+      id="authEmail"
+      class="auth-input"
+      type="email"
+      placeholder="Email">
 
 
-<button
-class="auth-btn auth-link"
-onclick="resetPassword()"
->
-Forgot Password?
-</button>
+    <!-- PASSWORD -->
+
+    <input
+      id="authPassword"
+      class="auth-input"
+      type="password"
+      placeholder="Password">
 
 
-<div class="divider"></div>
+    <!-- CONFIRM PASSWORD -->
+
+    <input
+      id="authConfirmPassword"
+      class="auth-input"
+      type="password"
+      placeholder="Confirm Password"
+      style="display:none;">
 
 
-<button
-class="auth-btn auth-signup"
-onclick="showSignup()"
->
-Create Student Account
-</button>
+    <!-- LOGIN -->
+
+    <button
+      id="loginButton"
+      class="auth-button auth-login"
+      onclick="loginUser()">
+      Login
+    </button>
 
 
-<button
-class="auth-btn auth-admin"
-onclick="showAdminLogin()"
->
-Admin Login
-</button>
+    <!-- SIGNUP -->
+
+    <button
+      id="signupButton"
+      class="auth-button auth-signup"
+      onclick="signupUser()"
+      style="display:none;">
+      Create Account
+    </button>
 
 
-</div>
+    <!-- RESET -->
+
+    <button
+      id="resetButton"
+      class="auth-button auth-reset"
+      onclick="resetPassword()">
+      Forgot Password?
+    </button>
 
 
-
-<!-- STUDENT SIGNUP -->
-
-<div
-id="signupForm"
-style="display:none"
->
-
-
-<input
-class="auth-input"
-id="signupName"
-type="text"
-placeholder="Full Name"
-autocomplete="name"
->
+    <p
+      class="auth-switch"
+      id="authSwitchText">
+      Don't have an account?
+      <button onclick="openAuth('signup')">
+        Create Account
+      </button>
+    </p>
 
 
-<input
-class="auth-input"
-id="signupEmail"
-type="email"
-placeholder="Email"
-autocomplete="email"
->
+    <p id="authMessage"></p>
 
-
-<input
-class="auth-input"
-id="signupPassword"
-type="password"
-placeholder="Password"
-autocomplete="new-password"
->
-
-
-<input
-class="auth-input"
-id="signupConfirm"
-type="password"
-placeholder="Confirm Password"
-autocomplete="new-password"
->
-
-
-<button
-class="auth-btn auth-signup"
-onclick="signupStudent()"
->
-Create Account
-</button>
-
-
-<button
-class="auth-btn auth-link"
-onclick="showLogin()"
->
-Back to Login
-</button>
-
-
-<p class="form-note">
-Password must contain at least 8 characters.
-</p>
-
+  </div>
 
 </div>
 
-
-
-<!-- ADMIN LOGIN -->
-
-<div
-id="adminForm"
-style="display:none"
->
-
-
-<p
-style="color:#5f7188;font-size:14px"
->
-Administrator access only.
-</p>
-
-
-<input
-class="auth-input"
-id="adminEmail"
-type="email"
-placeholder="Admin Email"
-autocomplete="email"
->
-
-
-<input
-class="auth-input"
-id="adminPassword"
-type="password"
-placeholder="Admin Password"
-autocomplete="current-password"
->
-
-
-<button
-class="auth-btn auth-admin"
-onclick="loginAdmin()"
->
-Admin Login
-</button>
-
-
-<button
-class="auth-btn auth-link"
-onclick="showLogin()"
->
-Back to Student Login
-</button>
-
-
-</div>
-
-
-<p
-class="auth-message"
-id="authMessage"
->
-</p>
-
-
-</div>
-
-</div>
-
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
+/* =========================
+   LANGUAGE
+========================= */
+
+let ar = false;
+
+function toggleLang(){
+
+  ar = !ar;
+
+  document.documentElement.lang =
+    ar ? "ar" : "en";
+
+  document.documentElement.dir =
+    ar ? "rtl" : "ltr";
+
+  document.getElementById("lang").textContent =
+    ar ? "EN" : "AR";
+
+  document.querySelectorAll("[data-en]").forEach(function(element){
+
+    element.textContent =
+      ar
+      ? element.dataset.ar
+      : element.dataset.en;
+
+  });
+
+}
+
 
 /* =========================
-   AUTH ELEMENTS
+   AUTH VARIABLES
 ========================= */
 
 const authModal =
-document.getElementById("authModal");
+  document.getElementById("authModal");
 
 const authMessage =
-document.getElementById("authMessage");
-
-const loginForm =
-document.getElementById("loginForm");
-
-const signupForm =
-document.getElementById("signupForm");
-
-const adminForm =
-document.getElementById("adminForm");
+  document.getElementById("authMessage");
 
 const authTitle =
-document.getElementById("authTitle");
+  document.getElementById("authTitle");
 
+const authSubtitle =
+  document.getElementById("authSubtitle");
+
+const authName =
+  document.getElementById("authName");
+
+const authEmail =
+  document.getElementById("authEmail");
+
+const authPassword =
+  document.getElementById("authPassword");
+
+const authConfirmPassword =
+  document.getElementById("authConfirmPassword");
+
+const loginButton =
+  document.getElementById("loginButton");
+
+const signupButton =
+  document.getElementById("signupButton");
+
+const resetButton =
+  document.getElementById("resetButton");
+
+const authSwitchText =
+  document.getElementById("authSwitchText");
 
 
 /* =========================
-   OPEN AUTH
+   OPEN LOGIN / SIGNUP
 ========================= */
 
-function openStudentAuth(){
+function openAuth(mode){
 
-  authModal.style.display="flex";
+  authModal.style.display = "flex";
 
-  showLogin();
+  authMessage.textContent = "";
+
+  authMessage.className = "";
+
+  if(mode === "signup"){
+
+    authTitle.textContent =
+      "Create Account";
+
+    authSubtitle.textContent =
+      "Create your True HSE Learning student account.";
+
+    authName.style.display =
+      "block";
+
+    authConfirmPassword.style.display =
+      "block";
+
+    loginButton.style.display =
+      "none";
+
+    signupButton.style.display =
+      "block";
+
+    resetButton.style.display =
+      "none";
+
+    authSwitchText.innerHTML =
+      'Already have an account? <button onclick="openAuth(\'login\')">Login</button>';
+
+  }else{
+
+    authTitle.textContent =
+      "Login";
+
+    authSubtitle.textContent =
+      "Login to your True HSE Learning account.";
+
+    authName.style.display =
+      "none";
+
+    authConfirmPassword.style.display =
+      "none";
+
+    loginButton.style.display =
+      "block";
+
+    signupButton.style.display =
+      "none";
+
+    resetButton.style.display =
+      "block";
+
+    authSwitchText.innerHTML =
+      'Don\'t have an account? <button onclick="openAuth(\'signup\')">Create Account</button>';
+
+  }
 
 }
 
+
+/* =========================
+   CLOSE AUTH
+========================= */
 
 function closeAuth(){
 
-  authModal.style.display="none";
+  authModal.style.display =
+    "none";
 
-  clearMessage();
-
-}
-
-
-function clearMessage(){
-
-  authMessage.textContent="";
-
-  authMessage.style.color="";
+  authMessage.textContent =
+    "";
 
 }
-
-
-function showMessage(
-  message,
-  error=true
-){
-
-  authMessage.textContent=message;
-
-  authMessage.style.color =
-    error ? "#d93025" : "#08a66a";
-
-}
-
 
 
 /* =========================
-   FORMS
+   SHOW MESSAGE
 ========================= */
 
-function showLogin(){
+function showMessage(message,type){
 
-  loginForm.style.display="block";
+  authMessage.textContent =
+    message;
 
-  signupForm.style.display="none";
-
-  adminForm.style.display="none";
-
-  authTitle.textContent="Student Login";
-
-  clearMessage();
+  authMessage.className =
+    type || "";
 
 }
-
-
-function showSignup(){
-
-  loginForm.style.display="none";
-
-  signupForm.style.display="block";
-
-  adminForm.style.display="none";
-
-  authTitle.textContent="Create Student Account";
-
-  clearMessage();
-
-}
-
-
-function showAdminLogin(){
-
-  loginForm.style.display="none";
-
-  signupForm.style.display="none";
-
-  adminForm.style.display="block";
-
-  authTitle.textContent="Admin Login";
-
-  clearMessage();
-
-}
-
 
 
 /* =========================
-   STUDENT SIGNUP
+   LOGIN
 ========================= */
 
-async function signupStudent(){
-
-  const name =
-    document.getElementById("signupName")
-    .value
-    .trim();
+async function loginUser(){
 
   const email =
-    document.getElementById("signupEmail")
-    .value
-    .trim();
+    authEmail.value.trim();
 
   const password =
-    document.getElementById("signupPassword")
-    .value;
+    authPassword.value;
 
-  const confirm =
-    document.getElementById("signupConfirm")
-    .value;
+  if(!email || !password){
+
+    showMessage(
+      "Please enter your email and password.",
+      "error"
+    );
+
+    return;
+  }
+
+  loginButton.disabled =
+    true;
+
+  loginButton.textContent =
+    "Logging in...";
+
+  try{
+
+    const result =
+      await supabaseClient.auth.signInWithPassword({
+        email:email,
+        password:password
+      });
+
+    if(result.error){
+
+      showMessage(
+        result.error.message,
+        "error"
+      );
+
+      return;
+    }
+
+    showMessage(
+      "Login successful!",
+      "success"
+    );
+
+    setTimeout(function(){
+
+      closeAuth();
+
+      updateLoggedInUser();
+
+    },800);
+
+  }catch(error){
+
+    console.error(error);
+
+    showMessage(
+      "Unable to connect. Please check your internet connection and try again.",
+      "error"
+    );
+
+  }finally{
+
+    loginButton.disabled =
+      false;
+
+    loginButton.textContent =
+      "Login";
+
+  }
+
+}
+
+
+/* =========================
+   CREATE STUDENT ACCOUNT
+========================= */
+
+async function signupUser(){
+
+  const name =
+    authName.value.trim();
+
+  const email =
+    authEmail.value.trim();
+
+  const password =
+    authPassword.value;
+
+  const confirmPassword =
+    authConfirmPassword.value;
 
 
   if(!name){
 
     showMessage(
-      "Please enter your full name."
+      "Please enter your full name.",
+      "error"
     );
 
     return;
-
   }
 
 
   if(!email){
 
     showMessage(
-      "Please enter your email."
+      "Please enter your email.",
+      "error"
     );
 
     return;
-
   }
 
 
-  if(password.length < 8){
+  if(password.length < 6){
 
     showMessage(
-      "Password must be at least 8 characters."
+      "Password must be at least 6 characters.",
+      "error"
     );
 
     return;
-
   }
 
 
-  if(password !== confirm){
+  if(password !== confirmPassword){
 
     showMessage(
-      "Passwords do not match."
+      "Passwords do not match.",
+      "error"
     );
 
     return;
-
   }
 
 
-  showMessage(
-    "Creating your account...",
-    false
-  );
+  signupButton.disabled =
+    true;
+
+  signupButton.textContent =
+    "Creating Account...";
 
 
   try{
@@ -1877,25 +1438,30 @@ async function signupStudent(){
     if(result.error){
 
       showMessage(
-        result.error.message
+        result.error.message,
+        "error"
       );
 
       return;
-
     }
 
+
+    /*
+      Supabase email confirmation is enabled.
+      The student must confirm the email before login.
+    */
 
     showMessage(
       "Account created successfully. Please check your email to confirm your account.",
-      false
+      "success"
     );
 
 
-    document.getElementById("signupPassword")
-      .value="";
+    authPassword.value =
+      "";
 
-    document.getElementById("signupConfirm")
-      .value="";
+    authConfirmPassword.value =
+      "";
 
 
   }catch(error){
@@ -1903,276 +1469,21 @@ async function signupStudent(){
     console.error(error);
 
     showMessage(
-      "Connection error. Please check your internet connection and try again."
+      "Unable to connect. Please check your internet connection and try again.",
+      "error"
     );
+
+  }finally{
+
+    signupButton.disabled =
+      false;
+
+    signupButton.textContent =
+      "Create Account";
 
   }
 
 }
-
-
-
-/* =========================
-   STUDENT LOGIN
-========================= */
-
-async function loginStudent(){
-
-  const email =
-    document.getElementById("loginEmail")
-    .value
-    .trim();
-
-  const password =
-    document.getElementById("loginPassword")
-    .value;
-
-
-  if(!email || !password){
-
-    showMessage(
-      "Please enter your email and password."
-    );
-
-    return;
-
-  }
-
-
-  showMessage(
-    "Logging in...",
-    false
-  );
-
-
-  try{
-
-    const result =
-      await supabaseClient.auth.signInWithPassword({
-
-        email:email,
-
-        password:password
-
-      });
-
-
-    if(result.error){
-
-      showMessage(
-        result.error.message
-      );
-
-      return;
-
-    }
-
-
-    showMessage(
-      "Login successful.",
-      false
-    );
-
-
-    setTimeout(()=>{
-
-      closeAuth();
-
-      window.location.href="#course";
-
-    },800);
-
-
-  }catch(error){
-
-    console.error(error);
-
-    showMessage(
-      "Connection error. Please try again."
-    );
-
-  }
-
-}
-
-
-
-/* =========================
-   ADMIN LOGIN
-========================= */
-
-async function loginAdmin(){
-
-  const email =
-    document.getElementById("adminEmail")
-    .value
-    .trim();
-
-  const password =
-    document.getElementById("adminPassword")
-    .value;
-
-
-  if(!email || !password){
-
-    showMessage(
-      "Enter the admin email and password."
-    );
-
-    return;
-
-  }
-
-
-  showMessage(
-    "Checking administrator access...",
-    false
-  );
-
-
-  try{
-
-    const result =
-      await supabaseClient.auth.signInWithPassword({
-
-        email:email,
-
-        password:password
-
-      });
-
-
-    if(result.error){
-
-      showMessage(
-        result.error.message
-      );
-
-      return;
-
-    }
-
-
-    const user =
-      result.data.user;
-
-
-    const profileResult =
-      await supabaseClient
-        .from("profiles")
-        .select("full_name,role")
-        .eq("id",user.id)
-        .single();
-
-
-    if(profileResult.error){
-
-      await supabaseClient.auth.signOut();
-
-      showMessage(
-        "Administrator profile was not found."
-      );
-
-      return;
-
-    }
-
-
-    if(profileResult.data.role !== "admin"){
-
-      await supabaseClient.auth.signOut();
-
-      showMessage(
-        "This account does not have administrator access."
-      );
-
-      return;
-
-    }
-
-
-    showMessage(
-      "Admin login successful.",
-      false
-    );
-
-
-    setTimeout(()=>{
-
-      closeAuth();
-
-      openAdminDashboard(
-        user.email,
-        profileResult.data.full_name
-      );
-
-    },700);
-
-
-  }catch(error){
-
-    console.error(error);
-
-    await supabaseClient.auth.signOut();
-
-    showMessage(
-      "Unable to verify administrator access."
-    );
-
-  }
-
-}
-
-
-
-/* =========================
-   ADMIN DASHBOARD
-========================= */
-
-function openAdminDashboard(
-  email,
-  name
-){
-
-  const panel =
-    document.getElementById("adminPanel");
-
-  panel.style.display="block";
-
-
-  document.getElementById("adminEmail")
-    .textContent =
-      (name || "Administrator")
-      + " • "
-      + email;
-
-
-  panel.scrollIntoView({
-    behavior:"smooth"
-  });
-
-}
-
-
-
-/* =========================
-   LOGOUT
-========================= */
-
-async function logoutUser(){
-
-  await supabaseClient.auth.signOut();
-
-  document.getElementById("adminPanel")
-    .style.display="none";
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
 
 
 /* =========================
@@ -2182,150 +1493,144 @@ async function logoutUser(){
 async function resetPassword(){
 
   const email =
-    document.getElementById("loginEmail")
-    .value
-    .trim();
-
+    authEmail.value.trim();
 
   if(!email){
 
     showMessage(
-      "Enter your email first."
+      "Enter your email first.",
+      "error"
     );
 
     return;
-
   }
+
+
+  resetButton.disabled =
+    true;
+
+  resetButton.textContent =
+    "Sending...";
 
 
   try{
 
     const result =
-      await supabaseClient.auth
-        .resetPasswordForEmail(
-          email,
-          {
-            redirectTo:
-              window.location.origin
-          }
-        );
+      await supabaseClient.auth.resetPasswordForEmail(
+
+        email,
+
+        {
+          redirectTo:
+            window.location.origin +
+            window.location.pathname
+        }
+
+      );
 
 
     if(result.error){
 
       showMessage(
-        result.error.message
+        result.error.message,
+        "error"
       );
 
-      return;
+    }else{
+
+      showMessage(
+        "Password reset email sent. Please check your inbox.",
+        "success"
+      );
 
     }
-
-
-    showMessage(
-      "Password reset email sent.",
-      false
-    );
-
 
   }catch(error){
 
     console.error(error);
 
     showMessage(
-      "Unable to send the password reset email."
+      "Unable to connect. Please try again.",
+      "error"
     );
+
+  }finally{
+
+    resetButton.disabled =
+      false;
+
+    resetButton.textContent =
+      "Forgot Password?";
 
   }
 
 }
 
 
-
 /* =========================
-   LANGUAGE
+   LOGOUT
 ========================= */
 
-let arabic=false;
+async function logoutUser(){
 
+  try{
 
-function toggleLang(){
+    await supabaseClient.auth.signOut();
 
-  arabic=!arabic;
+    document.getElementById(
+      "loggedInArea"
+    ).style.display =
+      "none";
 
+  }catch(error){
 
-  document.documentElement.lang =
-    arabic ? "ar" : "en";
+    console.error(error);
 
-
-  document.documentElement.dir =
-    arabic ? "rtl" : "ltr";
-
-
-  document.getElementById("lang")
-    .textContent =
-      arabic ? "EN" : "AR";
-
-
-  document.querySelectorAll(
-    "[data-en]"
-  ).forEach(element=>{
-
-    element.textContent =
-      arabic
-        ? element.dataset.ar
-        : element.dataset.en;
-
-  });
+  }
 
 }
-
 
 
 /* =========================
    CHECK SESSION
 ========================= */
 
-async function checkSession(){
+async function updateLoggedInUser(){
 
   try{
 
     const result =
-      await supabaseClient.auth
-        .getSession();
-
+      await supabaseClient.auth.getSession();
 
     if(
-      !result.data ||
-      !result.data.session
+      result.data &&
+      result.data.session &&
+      result.data.session.user
     ){
 
-      return;
+      const user =
+        result.data.session.user;
 
-    }
+      document.getElementById(
+        "loggedInArea"
+      ).style.display =
+        "block";
 
+      document.getElementById(
+        "loggedUser"
+      ).textContent =
+        "Logged in: " +
+        (
+          user.user_metadata?.full_name ||
+          user.email
+        );
 
-    const user =
-      result.data.session.user;
+    }else{
 
-
-    const profileResult =
-      await supabaseClient
-        .from("profiles")
-        .select("full_name,role")
-        .eq("id",user.id)
-        .single();
-
-
-    if(
-      profileResult.data &&
-      profileResult.data.role === "admin"
-    ){
-
-      openAdminDashboard(
-        user.email,
-        profileResult.data.full_name
-      );
+      document.getElementById(
+        "loggedInArea"
+      ).style.display =
+        "none";
 
     }
 
@@ -2337,6 +1642,44 @@ async function checkSession(){
 
 }
 
+
+/* =========================
+   AUTH STATE LISTENER
+========================= */
+
+supabaseClient.auth.onAuthStateChange(
+  function(event,session){
+
+    if(session){
+
+      document.getElementById(
+        "loggedInArea"
+      ).style.display =
+        "block";
+
+      const user =
+        session.user;
+
+      document.getElementById(
+        "loggedUser"
+      ).textContent =
+        "Logged in: " +
+        (
+          user.user_metadata?.full_name ||
+          user.email
+        );
+
+    }else{
+
+      document.getElementById(
+        "loggedInArea"
+      ).style.display =
+        "none";
+
+    }
+
+  }
+);
 
 
 /* =========================
@@ -2357,15 +1700,13 @@ authModal.addEventListener(
 );
 
 
-
 /* =========================
    START
 ========================= */
 
-checkSession();
+updateLoggedInUser();
 
 </script>
-
 
 </body>
 </html>
